@@ -17,6 +17,7 @@ const Register = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
+    console.log("this is apiurl",ApiUrl);
     const data = {
       name: name,
       email: email,
@@ -24,7 +25,7 @@ const Register = () => {
       confirmPassword: confirmPassword,
     };
     axios
-      .post(`${ApiUrl}/user/register`,data)
+      .post(`https://backendmern-5yke.onrender.com/user/register`,data)
       .then((response) => {
         toast.success(response.data.message,{
           position:"top-center",

@@ -18,7 +18,7 @@ const Header = () => {
     useContext(UserContext);
   const Logout = () => {
     axios
-      .post(`${ApiUrl}user/logout`,{},{ withCredentials: true })
+      .post(`https://backendmern-5yke.onrender.com/user/logout`,{},{ withCredentials: true })
       .then((response) => {
         const message = response.data.message;
         console.log(response.data);
