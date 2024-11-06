@@ -5,6 +5,7 @@ import { UserContext } from "../Stores/UserProfile";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+const ApiUrl = process.env.ApiUrl;
 const Header = () => {
   const navigate = useNavigate();
   const searchRef = useRef();
@@ -17,7 +18,7 @@ const Header = () => {
     useContext(UserContext);
   const Logout = () => {
     axios
-      .post("http://localhost:8243/user/logout",{},{ withCredentials: true })
+      .post(`${ApiUrl}user/logout`,{},{ withCredentials: true })
       .then((response) => {
         const message = response.data.message;
         console.log(response.data);

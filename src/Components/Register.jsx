@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
+const ApiUrl = process.env.ApiUrl;
 const Register = () => {
   const navigate=useNavigate();
   const nameRef = useRef();
@@ -23,7 +24,7 @@ const Register = () => {
       confirmPassword: confirmPassword,
     };
     axios
-      .post("http://localhost:8243/user/register",data)
+      .post(`${ApiUrl}/user/register`,data)
       .then((response) => {
         toast.success(response.data.message,{
           position:"top-center",

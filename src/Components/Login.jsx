@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate } from "react-router-dom";
 import { UserContext } from "../Stores/UserProfile";
-const ApiUrl = process.env.REACT_APP_API_URL;
+const ApiUrl = process.env.ApiUrl;
 const Login = () => {
   const { userData, setUserData, isAuthenticated, setIsAuthenticated } = useContext(UserContext);
   const emailRef = useRef();

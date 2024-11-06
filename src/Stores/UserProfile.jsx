@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+const ApiUrl = process.env.ApiUrl;
 export const UserContext = createContext();
 const ContextProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -11,7 +12,7 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8243/user/getdata", { withCredentials: true })
+      .get(`${ApiUrl}/user/getdata`, { withCredentials: true })
       .then((response) => {
         console.log(response.data);
         setUserData({
