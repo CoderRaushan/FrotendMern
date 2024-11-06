@@ -10,6 +10,7 @@ const ContextProvider = ({ children }) => {
     email: "",
   });
 
+  
   useEffect(() => {
     axios
       .get("https://backendmern-5yke.onrender.com/user/getdata", { withCredentials: true })
