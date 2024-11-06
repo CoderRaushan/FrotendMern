@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
-const ApiUrl = import.meta.env.ApiUrl;
+// const ApiUrl = import.meta.env.ApiUrl;
 const Register = () => {
   const navigate=useNavigate();
   const nameRef = useRef();
@@ -17,7 +17,7 @@ const Register = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
-    console.log("this is apiurl",ApiUrl);
+    // console.log("this is apiurl",ApiUrl);
     const data = {
       name: name,
       email: email,
