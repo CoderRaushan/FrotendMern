@@ -24,7 +24,7 @@ function App() {
         <Route path="FrotendMern/login" element={<Login />} />
         <Route path="FrotendMern/user" element={<UserProfile />} />
         <Route
-          path="/album"
+          path="FrotendMern/album"
           element={isAuthenticated ? <Album /> : <Login />}
         />
         <Route path="*" element={<Error />} />

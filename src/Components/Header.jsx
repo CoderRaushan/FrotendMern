@@ -12,7 +12,7 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = searchRef.current.value;
-    navigate(`/${search}`);
+    navigate(`/FrotendMern/${search}`);
   };
   const { userData, setUserData, isAuthenticated, setIsAuthenticated } =
     useContext(UserContext);
@@ -73,7 +73,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/FrotendMern"} className="nav-link">
+                <Link to={"FrotendMern/user"} className="nav-link">
                 {userData.name ? userData.name : "Profile"}
                 </Link>
               </li>
@@ -88,7 +88,7 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/FrotendMern/album"} className="dropdown-item">Album</Link>
+                    <Link to={"FrotendMern/album"} className="dropdown-item">Album</Link>
                   </li>
                   {/* <li>
                     <Link className="dropdown-item">Another action</Link>
