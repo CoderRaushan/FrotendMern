@@ -48,7 +48,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <Link to={"/"} className="navbar-brand">
+          <Link to={"/FrotendMern"} className="navbar-brand">
             Raus Privated Limited
           </Link>
           <button
@@ -68,12 +68,12 @@ const Header = () => {
               style={{ "--bs-scroll-height": "100px" }}
             >
               <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">
+                <Link to="/FrotendMern" className="nav-link active" aria-current="page">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
+                <Link to={"/FrotendMern"} className="nav-link">
                 {userData.name ? userData.name : "Profile"}
                 </Link>
               </li>
@@ -88,7 +88,7 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/album"} className="dropdown-item">Album</Link>
+                    <Link to={"/FrotendMern/album"} className="dropdown-item">Album</Link>
                   </li>
                   {/* <li>
                     <Link className="dropdown-item">Another action</Link>
@@ -122,11 +122,11 @@ const Header = () => {
             </form>
             {!isAuthenticated ? (
               <>
-                <Link to="/register">
+                <Link to="/FrotendMern/register">
                   <button className="btn btn-warning">SignUp</button>
                 </Link>
                 &nbsp;
-                <Link to="/login">
+                <Link to="/FrotendMern/login">
                   <button className="btn btn-primary">LogIn</button>
                 </Link>
               </>
