@@ -17,7 +17,7 @@ const Login = () => {
     const data = { email, password };
 
     axios
-      .post(`https://backendmern-5yke.onrender.com/user/login`, data, { withCredentials: true })
+      .post("https://backendmern-5yke.onrender.com/user/login", data, { withCredentials: true })
       .then((response) => {
         const message = response.data.message;
         console.log(response.data);

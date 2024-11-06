@@ -25,7 +25,7 @@ const Register = () => {
       confirmPassword: confirmPassword,
     };
     axios
-      .post(`https://backendmern-5yke.onrender.com/user/register`,data)
+      .post("https://backendmern-5yke.onrender.com/user/register",data)
       .then((response) => {
         toast.success(response.data.message,{
           position:"top-center",
