@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-const ApiUrl = process.env.ApiUrl;
+const ApiUrl = import.meta.env.ApiUrl;
 export const UserContext = createContext();
 const ContextProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

@@ -5,7 +5,7 @@ import { UserContext } from "../Stores/UserProfile";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-const ApiUrl = process.env.ApiUrl;
+const ApiUrl = import.meta.env.ApiUrl;
 const Header = () => {
   const navigate = useNavigate();
   const searchRef = useRef();
