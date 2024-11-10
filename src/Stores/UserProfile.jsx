@@ -22,7 +22,7 @@ const ContextProvider = ({ children }) => {
         setIsAuthenticated(true);
       })
       .catch((error) => {
-        // console.error("Error fetching user data:", error);
+        console.error("Error fetching user data:", error);
         setIsAuthenticated(false);
         setUserData({ _id: "", name: "", email: "" });
       });
