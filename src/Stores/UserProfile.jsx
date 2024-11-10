@@ -27,6 +27,7 @@ const ContextProvider = ({ children }) => {
         setUserData({ _id: "", name: "", email: "" });
       });
   }, []);
+  
 
   return (
     <UserContext.Provider
