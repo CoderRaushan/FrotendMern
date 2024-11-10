@@ -37,9 +37,7 @@ const Register = () => {
           position: "top-center",
           autoClose: 3000,
         });
-
-        // Update this route to match your login route
-        navigate("/FrotendMern/login");
+        navigate("/login");
       })
       .catch((error) => {
         console.error("There was an error!", error);

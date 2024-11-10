@@ -18,16 +18,16 @@ function App() {
       <ToastContainer />
       <Header/>
       <Routes>
-        <Route path="FrotendMern/" element={<Home />} />
-        <Route path="FrotendMern/home" element={<Home />} />
-        <Route path="FrotendMern/register" element={<Register />} />
-        <Route path="FrotendMern/login" element={<Login />} />
-        <Route path="FrotendMern/user" element={<UserProfile />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/user" element={<UserProfile />} />
         <Route
-          path="FrotendMern/album"
+          path="/album"
           element={isAuthenticated ? <Album /> : <Login />}
         />
-        <Route path="FrotendMern/*" element={<Error />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />
     </>

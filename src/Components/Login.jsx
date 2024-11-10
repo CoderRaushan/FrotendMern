@@ -28,7 +28,7 @@ const Login = () => {
           position: "top-center", 
           autoClose: 3000,
         });
-        navigate("/FrotendMern");
+        navigate("/");
       })
       .catch((error) => {
         const errorMessage=error.response?.data?.message || error.message;
