@@ -1,4 +1,4 @@
-// import '../App.css'
+
 import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Footer from "./Components/Footer";
@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <Header />
+      <Header/>
       <Routes>
-        <Route path="/FrotendMern" element={<Home />} />
+        <Route path="FrotendMern/" element={<Home />} />
         <Route path="FrotendMern/home" element={<Home />} />
         <Route path="FrotendMern/register" element={<Register />} />
         <Route path="FrotendMern/login" element={<Login />} />
@@ -27,7 +27,7 @@ function App() {
           path="FrotendMern/album"
           element={isAuthenticated ? <Album /> : <Login />}
         />
-        <Route path="*" element={<Error />} />
+        <Route path="FrotendMern/*" element={<Error />} />
       </Routes>
       <Footer />
     </>

@@ -12,7 +12,7 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = searchRef.current.value;
-    navigate(`/FrotendMern/${search}`);
+    navigate(`FrotendMern/${search}`);
   };
   const { userData, setUserData, isAuthenticated, setIsAuthenticated } =
     useContext(UserContext);
@@ -32,7 +32,7 @@ const Header = () => {
           name: "",
           email: "",
         });
-        navigate("/login");
+        navigate("FrotendMern/login");
       })
       .catch((error) => {
         const errorMessage = error.response?.data?.message || error.message;
@@ -48,7 +48,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <Link to={"/FrotendMern"} className="navbar-brand">
+          <Link to={"FrotendMern/"} className="navbar-brand">
             Raus Privated Limited
           </Link>
           <button
@@ -68,7 +68,7 @@ const Header = () => {
               style={{ "--bs-scroll-height": "100px" }}
             >
               <li className="nav-item">
-                <Link to="/FrotendMern" className="nav-link active" aria-current="page">
+                <Link to="FrotendMern/" className="nav-link active" aria-current="page">
                   Home
                 </Link>
               </li>
@@ -122,11 +122,11 @@ const Header = () => {
             </form>
             {!isAuthenticated ? (
               <>
-                <Link to="/FrotendMern/register">
+                <Link to="FrotendMern/register">
                   <button className="btn btn-warning">SignUp</button>
                 </Link>
                 &nbsp;
-                <Link to="/FrotendMern/login">
+                <Link to="FrotendMern/login">
                   <button className="btn btn-primary">LogIn</button>
                 </Link>
               </>

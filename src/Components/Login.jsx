@@ -6,7 +6,7 @@ import {useNavigate } from "react-router-dom";
 import { UserContext } from "../Stores/UserProfile";
 const ApiUrl = import.meta.env.ApiUrl;
 const Login = () => {
-  const { userData, setUserData, isAuthenticated, setIsAuthenticated } = useContext(UserContext);
+  const { setUserData, setIsAuthenticated } = useContext(UserContext);
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Login = () => {
           position: "top-center", 
           autoClose: 3000,
         });
-        navigate("/");
+        navigate("/FrotendMern");
       })
       .catch((error) => {
         const errorMessage=error.response?.data?.message || error.message;

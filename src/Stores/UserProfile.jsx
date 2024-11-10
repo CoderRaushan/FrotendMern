@@ -8,9 +8,7 @@ const ContextProvider = ({ children }) => {
     _id: "",
     name: "",
     email: "",
-  });
-
-  
+  });  
   useEffect(() => {
     axios
       .get("https://backendmern-5yke.onrender.com/user/getdata", { withCredentials: true })
