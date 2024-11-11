@@ -9,24 +9,24 @@ const ContextProvider = ({ children }) => {
     name: "",
     email: "",
   });  
-  // useEffect(() => {
-  //   axios
-  //     .get("https://backendmern-5yke.onrender.com/user/getdata", { withCredentials: true })
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setUserData({
-  //         _id: response.data.userId,
-  //         name: response.data.name,
-  //         email: response.data.email,
-  //       });
-  //       setIsAuthenticated(true);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching user data:", error);
-  //       setIsAuthenticated(false);
-  //       setUserData({ _id: "", name: "", email: "" });
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("https://backendmern-5yke.onrender.com/user/getdata", { withCredentials: true })
+      .then((response) => {
+        console.log(response.data);
+        setUserData({
+          _id: response.data.userId,
+          name: response.data.name,
+          email: response.data.email,
+        });
+        setIsAuthenticated(true);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+        setIsAuthenticated(false);
+        setUserData({ _id: "", name: "", email: "" });
+      });
+  }, []);
   
 
   return (
