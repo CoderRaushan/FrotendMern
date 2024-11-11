@@ -1,10 +1,10 @@
 import React, { useContext, useRef } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import {useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Stores/UserProfile";
-const ApiUrl = import.meta.env.ApiUrl;
+// const ApiUrl = import.meta.env.ApiUrl;
 const Login = () => {
   const { setUserData, setIsAuthenticated } = useContext(UserContext);
   const emailRef = useRef();
@@ -15,31 +15,35 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const data = { email, password };
-
     axios
-      .post("https://backendmern-5yke.onrender.com/user/login", data, { withCredentials: true })
-      .then((response) => {
+      //https://backendmern-5yke.onrender.com/user/login
+      .post("https://backendmern-5yke.onrender.com/user/login", data, {
+        withCredentials: true,
+      })
+      .then((response) => 
+        {
         const message = response.data.message;
         console.log(response.data);
-        setUserData({ _id: response.data._id, name:response.data.name, email:response.data.email});
+        setUserData({
+          _id: response.data._id,
+          name: response.data.name,
+          email: response.data.email,
+        });
         setIsAuthenticated(true);
-        toast.success(message, 
-        {
-          position: "top-center", 
+        toast.success(message, {
+          position: "top-center",
           autoClose: 3000,
         });
         navigate("/");
       })
       .catch((error) => {
-        const errorMessage=error.response?.data?.message || error.message;
-        toast.error(errorMessage, 
-        {
+        const errorMessage = error.response?.data?.message || error.message;
+        toast.error(errorMessage, {
           position: "top-center",
           autoClose: 3000,
         });
         console.error(error);
       });
-
   };
 
   return (

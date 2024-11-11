@@ -32,7 +32,7 @@ const Header = () => {
           name: "",
           email: "",
         });
-        navigate("FrotendMern/login");
+        navigate("/login");
       })
       .catch((error) => {
         const errorMessage = error.response?.data?.message || error.message;
