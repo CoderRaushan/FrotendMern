@@ -9,7 +9,7 @@ import ContextProvider from "./Stores/UserProfile.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ContextProvider>
-      <BrowserRouter basename="/FrotendMern">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ContextProvider>
