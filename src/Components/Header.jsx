@@ -5,6 +5,7 @@ import { UserContext } from "../Stores/UserProfile";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import "./Header.css";
 const ApiUrl = import.meta.env.ApiUrl;
 const Header = () => {
   const navigate = useNavigate();
@@ -18,7 +19,11 @@ const Header = () => {
     useContext(UserContext);
   const Logout = () => {
     axios
-      .post("https://backendmern-5yke.onrender.com/user/logout",{},{ withCredentials: true })
+      .post(
+        "https://backendmern-5yke.onrender.com/user/logout",
+        {},
+        { withCredentials: true }
+      )
       .then((response) => {
         const message = response.data.message;
         console.log(response.data);
@@ -46,95 +51,95 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <Link to={"/"} className="navbar-brand">
-            Raus Privated Limited
+      <nav className="navbar sticky-top navbar-expand-md">
+        <div className="container-fluid color">
+          <Link className="navbar-brand" to="/">
+            Raushan Private Limited
           </Link>
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" id="color"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarScroll">
-            <ul
-              className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              style={{ "--bs-scroll-height": "100px" }}
-            >
-              <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                {userData.name ? userData.name : "Profile"}
-                </Link>
-              </li>
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Link
-                </Link>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link to={"/album"} className="dropdown-item">Album</Link>
-                  </li>
-                  {/* <li>
-                    <Link className="dropdown-item">Another action</Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link className="dropdown-item">Something else here</Link>
-                  </li> */}
-                </ul>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link disabled" aria-disabled="true">
-                aT8v*YkLp2mZ6@qT
-                </Link>
-              </li>
-            </ul>
-            <form className="d-flex" role="search" onSubmit={handleSubmit}>
-              <input
-                ref={searchRef}
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-              &nbsp;
-            </form>
-            {!isAuthenticated ? (
-              <>
-                <Link to="/register">
-                  <button className="btn btn-warning">SignUp</button>
-                </Link>
-                &nbsp;
-                <Link to="/login">
-                  <button className="btn btn-primary">LogIn</button>
-                </Link>
-              </>
-            ) : (
-              <button className="btn btn-success" onClick={Logout}>
-                LogOut
-              </button>
-            )}
+
+          <div
+            className="offcanvas offcanvas-start"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+                Raushan Private Limited
+              </h5>
+              <button
+              
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+
+              ></button>
+            </div>
+
+            <div className="offcanvas-body">
+              <ul className="navbar-nav flex-grow-1">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/user">
+                    {userData.name || "Profile"}
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/album">
+                    Album
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link disabled" aria-disabled="true">
+                    aT8v*YkLp2mZ6@qT
+                  </Link>
+                </li>
+                <form className="d-flex" role="search" onSubmit={handleSubmit}>
+                  <input
+                    ref={searchRef}
+                    className="form-control"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  &nbsp;
+                  <button className="btn btn-warning" type="submit">
+                    Search
+                  </button>
+                </form>
+              </ul>
+
+              <div className="navbar-nav">
+                {!isAuthenticated ? (
+                  <>
+                    <Link className="nav-link" to="/register">
+                      <b>SignUp</b>
+                    </Link>
+                    <Link className="nav-link" to="/login">
+                      <b>LogIn</b>
+                    </Link>
+                  </>
+                ) : (
+                  <button className="nav-link btn btn-link" onClick={Logout}>
+                    <b>Log Out</b>
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </nav>
