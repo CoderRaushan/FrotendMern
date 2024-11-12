@@ -24,7 +24,6 @@ const Register = () => {
       password: password,
       confirmPassword: confirmPassword,
     };
-
     axios.post("https://backendmern-5yke.onrender.com/user/register", data)
       .then((response) => {
         console.log("Data posted successfully:", response.data);
@@ -32,7 +31,6 @@ const Register = () => {
         emailRef.current.value = "";
         passwordRef.current.value = "";
         confirmPasswordRef.current.value = "";
-
         toast.success(response.data.message || "Registration successful!", {
           position: "top-center",
           autoClose: 3000,

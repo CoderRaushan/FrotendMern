@@ -11,7 +11,6 @@ const ContextProvider = ({ children }) => {
   });  
   useEffect(() => {
     axios
-    //https://backendmern-5yke.onrender.com/user/getdata
       .get("https://backendmern-5yke.onrender.com/user/getdata", { withCredentials: true })
       .then((response) => {
         console.log(response.data);

@@ -16,7 +16,6 @@ const Login = () => {
     const password = passwordRef.current.value;
     const data = { email, password };
     axios
-      //https://backendmern-5yke.onrender.com/user/login
       .post("https://backendmern-5yke.onrender.com/user/login", data, {
         withCredentials: true,
       })
