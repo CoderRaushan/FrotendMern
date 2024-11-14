@@ -111,8 +111,8 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "https://backendmern-5yke.onrender.com/user/register"
-        // "http://localhost:8243/user/register"
+        // "https://backendmern-5yke.onrender.com/user/register"
+        "http://localhost:8243/user/register"
         ,
         formData,
         {
