@@ -98,7 +98,7 @@ const Header = () => {
                     <img 
                         src={userData.photo} 
                         alt="User Profile" 
-                        style={{ width: '50px', height: '50px', borderRadius: '50%' }} 
+                        style={{ width: '30px', height: '30px', borderRadius: '50%' }} 
                     />
                 ) : (
                     <p>N/A</p>
