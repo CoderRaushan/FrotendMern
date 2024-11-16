@@ -94,6 +94,15 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/user">
+                  {userData.photo ? (
+                    <img 
+                        src={userData.photo} 
+                        alt="User Profile" 
+                        style={{ width: '50px', height: '50px', borderRadius: '50%' }} 
+                    />
+                ) : (
+                    <p>N/A</p>
+                )}
                     {userData.name || "Profile"}
                   </Link>
                 </li>
