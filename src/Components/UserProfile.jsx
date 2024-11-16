@@ -11,6 +11,18 @@ function UserProfile()
             <h3>UserId: {userData._id || 'N/A'}</h3>
             <h3>Name: {userData.name || 'N/A'}</h3>
             <h3>Email: {userData.email || 'N/A'}</h3>
+            <div>
+                <h3>Photo:</h3>
+                {userData.photo ? (
+                    <img 
+                        src={userData.photo} 
+                        alt="User Profile" 
+                        style={{ width: '150px', height: '150px', borderRadius: '50%' }} 
+                    />
+                ) : (
+                    <p>N/A</p>
+                )}
+            </div>
         </div>
     );
 }
