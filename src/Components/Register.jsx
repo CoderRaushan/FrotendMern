@@ -92,6 +92,7 @@ const Register = () => {
   const [photo, setPhoto] = useState(null);
 
   const handlePhotoChange = (e) => {
+    console.log("file is:",e.target.files[0]);
     setPhoto(e.target.files[0]);
   };
 
@@ -108,11 +109,10 @@ const Register = () => {
     formData.append("password", password);
     formData.append("confirmPassword", confirmPassword);
     if (photo) formData.append("photo", photo);
-
-    try {
+    try { 
       const response = await axios.post(
-        // "https://backendmern-5yke.onrender.com/user/register"
-        "http://localhost:8243/user/register"
+        "https://backendmern-5yke.onrender.com/user/register"
+        // "http://localhost:8243/user/register"
         ,
         formData,
         {
@@ -124,7 +124,8 @@ const Register = () => {
         autoClose: 3000,
       });
       navigate("/login");
-    } catch (error) {
+    } catch (error) 
+    {
       console.error("There was an error!", error);
       toast.error(error.response?.data?.message || "Registration failed.", {
         position: "top-center",
@@ -183,6 +184,7 @@ const Register = () => {
             type="file"
             className="form-control"
             id="photo"
+            name="photo"
             onChange={handlePhotoChange}
           />
         </div>
