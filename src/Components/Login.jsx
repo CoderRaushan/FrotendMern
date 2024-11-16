@@ -27,6 +27,7 @@ const Login = () => {
           _id: response.data._id,
           name: response.data.name,
           email: response.data.email,
+          photo:response.data.photo,
         });
         setIsAuthenticated(true);
         toast.success(message, {

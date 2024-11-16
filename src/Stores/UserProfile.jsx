@@ -8,6 +8,7 @@ const ContextProvider = ({ children }) => {
     _id: "",
     name: "",
     email: "",
+    photo:"",
   });  
   useEffect(() => {
     axios
@@ -18,6 +19,7 @@ const ContextProvider = ({ children }) => {
           _id: response.data.userId,
           name: response.data.name,
           email: response.data.email,
+          photo:response.data.photo,
         });
         setIsAuthenticated(true);
       })
