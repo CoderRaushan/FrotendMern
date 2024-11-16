@@ -103,7 +103,7 @@ const Header = () => {
                 ) : (
                     <p>N/A</p>
                 )}
-                    {userData.name || "Profile"}
+                    {/* {userData.name || "Profile"} */}
                   </Link>
                 </li>
 
