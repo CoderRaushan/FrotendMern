@@ -10,9 +10,13 @@ const ContextProvider = ({ children }) => {
     email: "",
     photo:"",
   });  
+  const [ExpenseData, setExpenseData] = useState([]);  
   useEffect(() => {
     axios
-      .get("https://backendmern-5yke.onrender.com/user/getdata", { withCredentials: true })
+      .get(
+        // "https://backendmern-5yke.onrender.com/user/getdata",
+        "http://localhost:8243/user/getdata",
+         { withCredentials: true })
       .then((response) => {
         console.log(response.data);
         setUserData({
@@ -33,7 +37,7 @@ const ContextProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ userData, setUserData, isAuthenticated, setIsAuthenticated }}
+      value={{ userData, setUserData,ExpenseData,setExpenseData, isAuthenticated, setIsAuthenticated }}
     >
       {children}
     </UserContext.Provider>

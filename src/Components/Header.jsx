@@ -20,7 +20,9 @@ const Header = () => {
   const Logout = () => {
     axios
       .post(
-        "https://backendmern-5yke.onrender.com/user/logout",
+        // "https://backendmern-5yke.onrender.com/user/logout"
+        "http://localhost:8243/user/logout"
+        ,
         {},
         { withCredentials: true }
       )
@@ -107,6 +109,16 @@ const Header = () => {
                   </Link>
                 </li>
 
+                <li className="nav-item">
+                  <Link className="nav-link" to="/AddExpense">
+                    Add Items
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/ShowExpense">
+                   Show Items
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/album">
                     Album

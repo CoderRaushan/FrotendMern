@@ -11,6 +11,9 @@ import ContextProvider, { UserContext } from "./Stores/UserProfile";
 import { ToastContainer } from "react-toastify";
 import Album from "./Components/Album";
 import { useContext } from "react";
+import ItemPost from "./Components/ItemPost";
+import ShowExpense from "./Components/ShowExpense";
+import EditItem from "./Components/EditItem";
 function App() {
   const { isAuthenticated } = useContext(UserContext);
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/user" element={<UserProfile />} />
+        <Route path="/AddExpense" element={<ItemPost/>}/> 
+        <Route path="/ShowExpense" element={<ShowExpense/>} />
+        <Route path="/EditExpense" element={<EditItem/>} />
         <Route
           path="/album"
           element={isAuthenticated ? <Album /> : <Login />}
